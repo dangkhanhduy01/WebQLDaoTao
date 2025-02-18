@@ -95,6 +95,12 @@ namespace WebQLDaoTao
                 lbThongBao.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        protected void gvMonhoc_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMonhoc.PageIndex = e.NewPageIndex;
+            LienKetDuLieu();
+        }
     }
     
 }
