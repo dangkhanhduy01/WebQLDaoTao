@@ -100,6 +100,11 @@ namespace WebQLDaoTao
         {
             gvMonhoc.PageIndex = e.NewPageIndex;
             LienKetDuLieu();
+
+
+
+
+
         }
     }
     
