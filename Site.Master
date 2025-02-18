@@ -10,28 +10,32 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
+        /*CSS*/
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
         }
         .row.content {
-            height: 450px
+            height: 450px;
         }
         .sidenav {
-            padding-top: 20px;
-            background-color: #f1f1f1;
+            padding-top: 10px;
+            background-color: antiquewhite;
             height: 100%;
+        }
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
         }
         @media screen and (max-width: 767px) {
             .sidenav {
                 height: auto;
                 padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
             }
         }
     </style>
@@ -40,46 +44,47 @@
 </head>
 <body>
     <form id="form1" runat="server">
-      <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href="#">WebDaoTao</a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="Default.aspx">Trang chủ</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Danh mục
-                            <span class="caret"></span></a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="QLMonHoc.aspx">Môn học</a></li>
-                            <li><a href="QLKhoa.aspx">Khoa</a></li>
-                            <li><a href="QLSinhVien.aspx">Sinh viên</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Quản lý điểm thi</a></li>
-                </ul>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="Default.aspx">Trang chủ</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Danh mục
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="QLMonHoc.aspx">Môn học</a></li>
+                                <li><a href="QLKhoa.aspx">Khoa</a></li>
+                                <li><a href="QLSinhVien.aspx">Sinh viên</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Quản lý điểm thi</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
-
-
-        <div class="container" style="min-height: 500px">
+        <div class="container" style="min-height: 600px; padding: 10px">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2 ">
                     <div class="list-group">
                         <a href="#" class="list-group-item active">CHỨC NĂNG CHÍNH</a>
-
-                        <a href="QLMonHoc.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản lý môn học</a>
-
+                        <a href="QLMonHoc.aspx" class="list-group-item"><i class="bi bi-card-checklist"></i>Quản lý môn học</a>
                         <a href="QLKhoa.aspx" class="list-group-item"><span class="glyphicon glyphicon-book"></span>Quản lý khoa</a>
-
                         <a href="QLSinhVien.aspx" class="list-group-item"><span class="glyphicon glyphicon-user"></span>Quản lý sinh viên</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>Quản lý điểm</a>
+                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-edit"></span>Quản lý điểm</a>
                     </div>
                 </div>
-
-                <div class="col-md-9">
-                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                <div class="col-md-10">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
