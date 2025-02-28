@@ -15,15 +15,6 @@ namespace WebQLDaoTao
     {
 
         /// <summary>
-        /// PanelSinhVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelSinhVien;
-
-        /// <summary>
         /// gvSinhVien control.
         /// </summary>
         /// <remarks>
@@ -33,12 +24,12 @@ namespace WebQLDaoTao
         protected global::System.Web.UI.WebControls.GridView gvSinhVien;
 
         /// <summary>
-        /// btnAddSinhVien control.
+        /// odsSinhVien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddSinhVien;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsSinhVien;
     }
 }

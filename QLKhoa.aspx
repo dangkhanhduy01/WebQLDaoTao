@@ -15,7 +15,7 @@
    <h2>QUẢN LÝ MÔN HỌC</h2>
 <hr />
 <div>
-     <%-- Nút Thêm --%>
+    
     <asp:Button ID="btShowForm" runat="server" Text="Thêm" CssClass="btn btn-info" OnClientClick="showAddForm(); return false;" OnClick="btShowForm_Click" />
     
     <%-- Form thêm môn học --%>
@@ -57,8 +57,8 @@
     </asp:GridView>
     <asp:ObjectDataSource ID="odsKhoa" runat="server"
         SelectMethod="getAll"
-        TypeName="WebQL.Models.KhoaDAO"
-        DataObjectTypeName="WebQL.Models.Khoa"
+        TypeName="WebQLDaoTao.Models.KhoaDAO"
+        DataObjectTypeName="WebQLDaoTao.Models.Khoa"
         UpdateMethod="Update" 
         DeleteMethod="Delete">
         <DeleteParameters>
