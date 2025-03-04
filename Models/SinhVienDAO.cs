@@ -80,6 +80,7 @@ namespace WebQLDaoTao.Models
             {
                 return 0; // Trả về 0 nếu có lỗi xảy ra
             }
+
         }
     }
 }

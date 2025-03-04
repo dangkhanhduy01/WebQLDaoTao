@@ -14,8 +14,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <h2>QUẢN LÝ MÔN HỌC</h2>
 <hr />
-<div>
-    
+
+     <%-- Nút Thêm --%>
     <asp:Button ID="btShowForm" runat="server" Text="Thêm" CssClass="btn btn-info" OnClientClick="showAddForm(); return false;" OnClick="btShowForm_Click" />
     
     <%-- Form thêm môn học --%>
@@ -45,7 +45,7 @@
         </div>
     </div>
     
-    
+   
     
     <asp:GridView ID="gvKhoa" runat="server" CssClass="table table-bordered"
         AutoGenerateColumns="False" DataSourceID="odsKhoa" DataKeyNames="MaKH" >
@@ -54,6 +54,7 @@
             <asp:BoundField DataField="TenKH" HeaderText="Tên Khoa" />
             <asp:CommandField HeaderText="Chọn Tác Vụ" ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button" />
         </Columns>
+   
     </asp:GridView>
     <asp:ObjectDataSource ID="odsKhoa" runat="server"
         SelectMethod="getAll"
@@ -61,10 +62,6 @@
         DataObjectTypeName="WebQLDaoTao.Models.Khoa"
         UpdateMethod="Update" 
         DeleteMethod="Delete">
-        <DeleteParameters>
-            <asp:Parameter Name="makh" Type="String" />
-        </DeleteParameters>
     </asp:ObjectDataSource>
 
 </asp:Content>
-

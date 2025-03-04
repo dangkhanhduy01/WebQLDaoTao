@@ -46,8 +46,7 @@ namespace WebQLDaoTao.Models
         // xóa môn học 
         public int Delete(Khoa kh)
         {
-            try
-            {
+           
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebQLDaoTao_Constr1"].ConnectionString))
                 {
                     conn.Open();
@@ -57,11 +56,8 @@ namespace WebQLDaoTao.Models
                     return cmd.ExecuteNonQuery();
 
                 }
-            }
-            catch (Exception ex)
-            {
-                return 0; // Trả về 0 nếu có lỗi xảy ra
-            }
+            
+         
         }
 
 
