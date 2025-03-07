@@ -51,5 +51,25 @@ namespace WebQLDaoTao.Models
             return cmd.ExecuteNonQuery();
 
         }
+        public int Delete(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebQLDaoTao_Constr1"].ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("delete from ketqua where id=@id", conn);
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0; // Trả về 0 nếu có lỗi xảy ra
+            }
+
+        }
     }
 }

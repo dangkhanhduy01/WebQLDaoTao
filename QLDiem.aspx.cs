@@ -32,5 +32,20 @@ namespace WebQLDaoTao
                 Response.Write("<script> alert('Lưu Điểm Thất Bại </script>");
             }
         }
+        protected void btxoa_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gvKetQua.Rows.Count; i++)
+            {
+                // lấy id (datakeys) của dòng
+                int id = int.Parse(gvKetQua.DataKeys[i].Value.ToString());
+                CheckBox chon = (CheckBox)gvKetQua.Rows[i].FindControl("ckChon");
+                if (chon.Checked)
+                {
+                    // goij lip DAO xia khoi csdl
+                    kqDAO.Delete(id);
+                }
+            }
+            gvKetQua.DataBind();
+        }
     }
 }
