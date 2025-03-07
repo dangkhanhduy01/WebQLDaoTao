@@ -11,7 +11,7 @@
         DataSourceID="odsMonHoc" DataTextField="TenMH" DataValueField="MaMH" CssClass="form-control" Width="300px">
     </asp:DropDownList>
     </div>
-    <asp:GridView ID="gvKetQua" runat="server" CssClass="table table-bordered" AutoGenerateColumns="False" DataSourceID="odsKetQua" Width="70%" DataKeyNames="Id" ShowFooter="True">
+    <asp:GridView ID="gvKetQua" runat="server" CssClass="table table-bordered" AutoGenerateColumns="False" DataSourceID="odsKetQua" Width="70%" DataKeyNames="Id" ShowFooter="True" OnSelectedIndexChanged="gvKetQua_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="MaSV" HeaderText="MaSV" SortExpression="MaSV" />
             <asp:BoundField DataField="hotensv" HeaderText="Ho Ten Sinh Vien" />
@@ -24,15 +24,18 @@
                     <asp:Button ID="btluu" runat="server" Text="Lưu"  CssClass="btn btn-success" OnClick="btLuu_Click"/>              
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField>
+            <asp:TemplateField HeaderText="Chọn xóa">
+                <HeaderTemplate>
+                    <asp:CheckBox ID="ckAll" runat="server" Text="Chọn Tất Cả"  AutoPostBack ="true" OnCheckedChanged="ckAll_CheckedChanged"/>  
+                </HeaderTemplate>
                 <ItemTemplate>
-                        <asp:CheckBox ID="ckChon" runat="server" />
+                        <asp:CheckBox ID="ckChon" runat="server"  />
                 </ItemTemplate>
                 <FooterTemplate>
                          <asp:Button ID="btxoa" runat="server" Text="Xóa" CssClass="btn btn-success" OnClick="btxoa_Click"/>  
                 </FooterTemplate>
             </asp:TemplateField>
-         
+
         </Columns>
         <EmptyDataTemplate>
             <div class="alert alert-warning" role="alert">
@@ -43,10 +46,11 @@
     </asp:GridView>
     <asp:ObjectDataSource ID="odsMonHoc" runat="server" SelectMethod="getAll" TypeName="WebQLDaoTao.Models.MonHocDao"></asp:ObjectDataSource>
 
- <asp:ObjectDataSource ID="odsKetQua" runat="server" SelectMethod="getByMaMH" TypeName="WebQLDaoTao.Models.KetQuaDAO">
-    <SelectParameters>
-        <asp:ControlParameter ControlID="ddlMaMh" Name="mamh" PropertyName="SelectedValue" Type="String" />
-    </SelectParameters>
-</asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="odsKetQua" runat="server" SelectMethod="getByMaMH" TypeName="WebQLDaoTao.Models.KetQuaDAO">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="ddlMaMh" Name="mamh" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 </asp:Content>
+
