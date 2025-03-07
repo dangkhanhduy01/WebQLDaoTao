@@ -20,7 +20,7 @@
                    <asp:TextBox ID="txtDiem" runat="server" Text='<%# Eval("Diem") %>'></asp:TextBox>
                </ItemTemplate>
                <FooterTemplate>
-                   <asp:Button  ID="btluu" runat="server" Text="Lưu" />
+                  <asp:Button ID="btluu" runat="server" Text="Lưu"  CssClass="btn btn-success" OnClick="btLuu_Click"/>     
                </FooterTemplate>
            </asp:TemplateField>
         

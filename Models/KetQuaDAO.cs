@@ -40,5 +40,16 @@ namespace WebQLDaoTao.Models
             }
             return ds;
         }
+        public int Update(int id, float diem)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebQLDaoTao_Constr1"].ConnectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("update ketqua set diem=@diem  where id=@id", conn);
+            cmd.Parameters.AddWithValue("@diem", diem);
+            cmd.Parameters.AddWithValue("@id", id);
+            //3.thuc thi ket qua;
+            return cmd.ExecuteNonQuery();
+
+        }
     }
 }
